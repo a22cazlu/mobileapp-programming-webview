@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
         myWebView = findViewById(R.id.my_webview);
         myWebView.setWebViewClient(new WebViewClient()); // Do not open in Chrome!
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
         myWebView.loadUrl("https://his.se");
         /*
         * Rename your App. Tip: Values->Strings
